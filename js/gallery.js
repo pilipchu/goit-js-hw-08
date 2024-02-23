@@ -63,6 +63,9 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+
+// Це все треба зробити в переборі масиву.
 // создания ячейки списка
 const list = document.querySelector('.gallery');
 const link = document.createElement('li')
@@ -75,3 +78,5 @@ linkAddres.href = 'large-image.jpg'
 const linkImg = document.createElement('img')
 linkImg.classList.add('gallery-image')
 linkImg.src = 'small-image.jpg'// потрібно замінити на маленьку картинку в масиві обєктів
+linkImg.dataset.source = 'large-image.jpg' // вставити значення з масиві обєктів
+linkImg.alt = 'Image description' //взтавити значення з масиві обєктів
