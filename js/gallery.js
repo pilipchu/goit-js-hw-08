@@ -68,6 +68,10 @@ const images = [
 // Це все треба зробити в переборі масиву.
 // создания ячейки списка
 const list = document.querySelector('.gallery');
+
+const newGallary = images.map({preview, original, description})=> 
+
+
 const link = document.createElement('li')
 link.classList.add('gallery-item')
 // создания посилання
@@ -79,4 +83,6 @@ const linkImg = document.createElement('img')
 linkImg.classList.add('gallery-image')
 linkImg.src = 'small-image.jpg'// потрібно замінити на маленьку картинку в масиві обєктів
 linkImg.dataset.source = 'large-image.jpg' // вставити значення з масиві обєктів
-linkImg.alt = 'Image description' //взтавити значення з масиві обєктів
+linkImg.alt = 'Image description'//взтавити значення з масиві обєктів
+
+)
