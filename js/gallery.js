@@ -69,7 +69,7 @@ const images = [
 // создания ячейки списка
 const list = document.querySelector('.gallery');
 
-const newGallary = images.map({preview, original, description})=> 
+const newGallery = images.map({preview, original, description})=> 
 
 
 const link = document.createElement('li')
@@ -77,14 +77,15 @@ link.classList.add('gallery-item')
 // создания посилання
 const linkAddres = document.createElement('a')
 linkAddres.classList.add('gallery-link')
-linkAddres.href = 'large-image.jpg'
+linkAddres.href = `${preview}`
 //создания тега картинки
 const linkImg = document.createElement('img')
 linkImg.classList.add('gallery-image')
-linkImg.src = 'small-image.jpg'// потрібно замінити на маленьку картинку в масиві обєктів
-linkImg.dataset.source = 'large-image.jpg' // вставити значення з масиві обєктів
-linkImg.alt = 'Image description'//взтавити значення з масиві обєктів
-linkImg.append(linkAddres)
-linkAddres.append(link)
+linkImg.src = `${original}`// потрібно замінити на маленьку картинку в масиві обєктів
+linkImg.dataset.source = `${preview}`// вставити значення з масиві обєктів
+linkImg.alt = `${description}//взтавити значення з масиві обєктів
+linkAddres.append(linkImg)
+link.append(linkAddres)
 return link
 )
+list.append(...newGallery)
