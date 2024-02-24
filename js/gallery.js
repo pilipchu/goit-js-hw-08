@@ -84,5 +84,7 @@ linkImg.classList.add('gallery-image')
 linkImg.src = 'small-image.jpg'// потрібно замінити на маленьку картинку в масиві обєктів
 linkImg.dataset.source = 'large-image.jpg' // вставити значення з масиві обєктів
 linkImg.alt = 'Image description'//взтавити значення з масиві обєктів
-
+linkImg.append(linkAddres)
+linkAddres.append(link)
+return link
 )
