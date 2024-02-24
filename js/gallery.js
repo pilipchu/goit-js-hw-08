@@ -71,7 +71,6 @@ const list = document.querySelector('.gallery');
 
 const newGallery = images.map({preview, original, description})=> 
 
-
 const link = document.createElement('li')
 link.classList.add('gallery-item')
 // создания посилання
@@ -83,7 +82,8 @@ const linkImg = document.createElement('img')
 linkImg.classList.add('gallery-image')
 linkImg.src = `${original}`// потрібно замінити на маленьку картинку в масиві обєктів
 linkImg.dataset.source = `${preview}`// вставити значення з масиві обєктів
-linkImg.alt = `${description}//взтавити значення з масиві обєктів
+linkImg.alt = `${description}`//взтавити значення з масиві обєктів
+
 linkAddres.append(linkImg)
 link.append(linkAddres)
 return link
