@@ -69,7 +69,7 @@ const images = [
 // создания ячейки списка
 const list = document.querySelector('.gallery');
 
-const newGallery = images.map({preview, original, description})=> 
+const newGallery = images.map({preview, original, description})=> {
 
 const link = document.createElement('li')
 link.classList.add('gallery-item')
@@ -87,5 +87,5 @@ linkImg.alt = `${description}`//взтавити значення з масив�
 linkAddres.append(linkImg)
 link.append(linkAddres)
 return link
-)
+})
 list.append(...newGallery)
