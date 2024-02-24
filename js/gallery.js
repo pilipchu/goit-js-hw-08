@@ -69,7 +69,7 @@ const images = [
 // создания ячейки списка
 const list = document.querySelector('.gallery');
 
-const newGallery = images.map({preview, original, description})=> {
+const newGallery = images.map(const {preview, original, description}=img)=> {
 
 const link = document.createElement('li')
 link.classList.add('gallery-item')
