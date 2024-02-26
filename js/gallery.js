@@ -64,9 +64,7 @@ const images = [
   },
 ];
 
-
-// Це все треба зробити в переборі масиву.
-// создания ячейки списка
+// отримуэмо доступ до елемента списку
 const list = document.querySelector('.gallery');
 
 const newGallery = images.map(({preview, original, description})=> {
@@ -76,12 +74,12 @@ link.classList.add('gallery-item')
 // создания посилання
 const linkAddres = document.createElement('a')
 linkAddres.classList.add('gallery-link')
-linkAddres.href = `${preview}`
+linkAddres.href = `${original}`
 //создания тега картинки
 const linkImg = document.createElement('img')
 linkImg.classList.add('gallery-image')
-linkImg.src = `${original}`// потрібно замінити на маленьку картинку в масиві обєктів
-linkImg.dataset.source = `${preview}`// вставити значення з масиві обєктів
+linkImg.src = `${preview}`// потрібно замінити на маленьку картинку в масиві обєктів
+linkImg.dataset.source = `${original}`// вставити значення з масиві обєктів
 linkImg.alt = `${description}`//взтавити значення з масиві обєктів
 
 linkAddres.append(linkImg)
@@ -89,3 +87,14 @@ link.append(linkAddres)
 return link
 })
 list.append(...newGallery)
+
+list.addEventListener('click', galleryClick)
+
+function galleryClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return
+  }
+  event.preventDefault()
+  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width ="1112" height="640"/>`)
+  instance.show()
+}
