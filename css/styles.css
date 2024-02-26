@@ -28,8 +28,10 @@ img {
   display: inline-block;
   width: 360px;
   height: 200px;
+  transition: transform 200ms linear;
 }
 
 img:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }
